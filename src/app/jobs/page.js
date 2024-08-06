@@ -1,12 +1,14 @@
 import { createFilterCategoryAction, fetchJobApplicationsForCandidate, fetchJobApplicationsForRecruiter, fetchJobsForCandidateAction, fetchJobsForRecruiterAction, fetchProfileAction } from "@/actions";
 import JobListing from "@/components/job-listing"
 import { currentUser } from "@clerk/nextjs/server"
+import { redirect } from "next/navigation";
 
 async function JobsPage({searchParams}) {
     const user = await currentUser();
     const profileInfo = await fetchProfileAction(user?.id);
     
-    
+    if(!user)redirect('/sign-up');
+
     const jobList = profileInfo?.role === 'candidate' ? 
     await fetchJobsForCandidateAction(searchParams) : 
     await fetchJobsForRecruiterAction(user?.id)
