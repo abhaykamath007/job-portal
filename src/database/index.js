@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+/*import mongoose from "mongoose"
 
 const connectToDB = async()=>{
     const connectionURL = "mongodb+srv://abhaykamath100:jobportal@cluster0.yjaubvo.mongodb.net/"
@@ -6,7 +6,7 @@ const connectToDB = async()=>{
 }
 
 export default connectToDB;
-/*
+*/
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import path from 'path';
@@ -22,4 +22,3 @@ const connectToDB = async () => {
 };
 
 export default connectToDB;
-*/
