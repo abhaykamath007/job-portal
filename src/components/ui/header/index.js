@@ -85,8 +85,8 @@ function Header({ user,profileInfo}) {
                         </Link> : null
                     )
                 }
-                <UserButton />
             </nav>
+            <div className="ml-auto"><UserButton /></div>
         </header>
     </div>
 }
